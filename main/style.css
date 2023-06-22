@@ -4,8 +4,7 @@ header nav{height: 3cm;
 
 
 
-.img1{width: auto   ;
-    width: 12cm;
+.img1{width: 18cm   ;
     align-items: center;
     border-radius: 1cm;
     border-color: black;
@@ -17,9 +16,20 @@ header nav{height: 3cm;
 
 .botonagregar{border-radius: 1cm;
     border-color: black;
+    margin: 0.5cm;
 
 }
+.tipotext1{text-align:start;
 
+}
 .tipotext2{align-items: center;
     width: 5cm   ;
+}
+
+.text-muted{
+    width: 15cm;
+}
+
+.btn{border: 0.5cm;
+    border-color: black;
 }
