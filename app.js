@@ -96,12 +96,6 @@ mostrarCarrito()
 	 } 
  
 
-	 
-	 const actualizarTotal= (c)=> {
-		     const finalizar = carrito.reduce((a,pizza) =>a + pizza.precio,0);
-		    c.textContent=`Precio: $${finalizar}`
-		 }
-
 
  const inputName=document.getElementById("inputName")
  const direccion=document.getElementById("idDireccion")
