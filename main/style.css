@@ -1,0 +1,50 @@
+header nav{height: 3cm;
+
+}
+.card-title{
+    text-align: center;
+    
+}
+
+.card-text{
+    text-align: center;
+}
+
+.card-img-top{
+    width: 50%;
+    height: 13cm;
+   
+    margin-right: 1cm;
+    padding: 5px;
+    background: black;
+    
+     
+}
+    
+.cssproductos{display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+/* section div div{
+    width: 12cm;
+    display: flexbox;
+    flex-direction: row;
+} */
+
+#contenedorPizza{border-bottom: 1px solid #333;
+	
+	display: flex;
+    
+	
+   
+	
+	
+
+   
+}
+
+section div ul{
+    width: 6cm;
+    
+}
