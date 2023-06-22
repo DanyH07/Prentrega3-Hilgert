@@ -1,50 +1,25 @@
 header nav{height: 3cm;
 
 }
-.card-title{
-    text-align: center;
-    
-}
 
-.card-text{
-    text-align: center;
-}
 
-.card-img-top{
-    width: 50%;
-    height: 13cm;
-   
-    margin-right: 1cm;
-    padding: 5px;
-    background: black;
-    
-     
-}
-    
-.cssproductos{display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-}
-/* section div div{
+
+.img1{width: auto   ;
     width: 12cm;
-    display: flexbox;
-    flex-direction: row;
-} */
+    align-items: center;
+    border-radius: 1cm;
+    border-color: black;
 
-#contenedorPizza{border-bottom: 1px solid #333;
-	
-	display: flex;
-    
-	
-   
-	
-	
-
-   
+}
+.img2{
+    width: 6cm;;
 }
 
-section div ul{
-    width: 6cm;
-    
+.botonagregar{border-radius: 1cm;
+    border-color: black;
+
+}
+
+.tipotext2{align-items: center;
+    width: 5cm   ;
 }

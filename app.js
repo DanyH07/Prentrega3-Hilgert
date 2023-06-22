@@ -18,7 +18,7 @@ let pizzas = [
     {id:"5", tipo:"Verduras",precio: 2230,ingredientes:"salsa de tomate, cebolla, morron, rucula y aceitunas",Imagen:"./img/verdura.jpg"},
     {id:"6", tipo:"Champigniones",precio: 2200,ingredientes:"salsa de tomate, champignones, aceitunas y jamon",Imagen:"./img/champigniones.jpg"},
     {id:"7", tipo:"Vegana",precio: 2150,ingredientes:"salas de tomate, morron, cebolla, aceitunas negras y queso vegan",Imagen:"./img/veg1.jpg"},
-    {id:"8", tipo:"Vegana2",precio: 2250,ingredientes:"salsa de tomate, brocoli,rucula tofu, queso vegan y aceite de sesamo",Imagen:"./img/veg2.jpg"},
+	{id:"8", tipo:"Vegana2",precio: 2250,ingredientes:"salsa de tomate, brocoli,rucula tofu, queso vegan y aceite de sesamo",Imagen:"./img/veg2.jpg"}
 
 ]
 const mostrarProducto = (pizzas)=> {
@@ -29,17 +29,18 @@ pizzas.forEach((pizza,) =>{
     const div = document.createElement(`div`)
    div.innerHTML = 
      `
-    <h5 class="card-title">${pizza.tipo}</h5>
-    <img src="${pizza.Imagen}" class="card-img-top" alt="card-img-top">
-	   
-    <p class="card-text">${pizza.ingredientes}</p>
-    <p class="card-text"><small class="text-muted">$${pizza.precio}</small></p>
-    <button id="${pizza.id}" type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off">Agregar a Carrito</button>
-    `
+	 <div class="container">
+    <h5 class="tipotext1">${pizza.tipo}</h5>
+    <img src="${pizza.Imagen}" class=img1" alt="card-img-top">
+    <p class="ingrediente1">${pizza.ingredientes}</p>
+    <p class="precio1"><small class="text-muted">$${pizza.precio}</small></p>
+    <button id="${pizza.id}" type="button" class="botonagregar" data-bs-toggle="button" autocomplete="off">Agregar a Carrito</button>
+	</div>
+	`
     contenedor.appendChild(div);
 
-    const botonpizza= document.getElementById(`${pizza.id}`)
-    botonpizza.addEventListener(`click`, ()=>{
+    const botonPizza= document.getElementById(`${pizza.id}`)
+    botonPizza.addEventListener(`click`, ()=>{
          agregarACarrito(pizza.id)
 
 } )
@@ -59,21 +60,12 @@ const agregarACarrito= (id)=>{
 	console.log(acarrito)
 	}else {
 		acarrito[agregar].cantidad+=1
-		mostrarCarrito()
+	
 
 	}
 
    }
 
-// const agregarACarrito= (id)=>{
-// 	const agregar= pizzas.find((pizza)=> pizza.id=== id);
-// 	 acarrito.push(agregar),
-// 	 localStorage.setItem("contenedor-Carrito", JSON.stringify(acarrito))
-// 	 mostrarCarrito()
-// 	 console.log(acarrito)
-//    }
-
- 
   const mostrarCarrito = ()=>{
 	  itemCarrito.id ="contenedor-Carrito"
 	  itemCarrito.innerHTML= ""
@@ -84,11 +76,13 @@ const agregarACarrito= (id)=>{
 	 mostrarCarrito.innerHTML=
 	 `
 	 
-	 <h5 class="card-title">${pizza.tipo}</h5>
-	 <img src="${pizza.Imagen}" class="card-img-top" alt="card-img-top">   
-	<p class="card-text">${pizza.ingredientes}</p>
-	 <p class="card-text"><small class="text-muted">$${pizza.precio}</small></p>
+	 <h5 class="tipotext2">${pizza.tipo}</h5>
+	 <img src="${pizza.Imagen}" class="img2" alt="card-img-top">   
+	<p class="ingrediente2">${pizza.ingredientes}</p>
+	<p class="precio2"><small class="text-muted">$${pizza.precio * pizza.cantidad}</small></p>
+	<p class="cantidad1"><small class="text-muted">Total-${pizza.cantidad}</small></p>
 	 <button id="eliminar${pizza.id}" type="button" class="eliminarelemento" data-bs-toggle="button" autocomplete="off">Eliminar Producto</button>
+	
 	 `
  
 	 itemCarrito.appendChild(mostrarCarrito)
@@ -107,7 +101,9 @@ const agregarACarrito= (id)=>{
 	    mostrarCarrito();
 	 } 
  
-	 const actualizartotal= (c)=> {
+
+	 
+	 const actualizarTotal= (c)=> {
 		     const finalizar = carrito.reduce((a,pizza) =>a + pizza.precio,0);
 		    c.textContent=`Precio: $${finalizar}`
 		 }
@@ -123,6 +119,7 @@ const agregarACarrito= (id)=>{
  
  mostrarProducto(pizzas)
 mostrarCarrito()
+
  
  
  
